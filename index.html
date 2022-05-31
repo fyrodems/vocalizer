@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
-    <link rel="icon" href="images/fevicon.png">
+    <script src="index.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
@@ -17,16 +18,38 @@
 <body>
     <main class="vocalizer">
 
+        <!-- <div class="logo">
+            <i class="fa-solid fa-microphone-lines"></i>
+        </div> -->
+
         <div class="container">
-            <form action="">
-                <textarea name="text" id="text" cols="20" rows="3">Write your text here</textarea>
+            <form class="vocalizer__form">
 
-                <label for="speed">Speed:</label>
-                <input type="range" id="speed" name="speed">
 
-                <input type="button" value="pause" id="pause">
-                <input type="button" value="play" id="play">
+                <textarea class="form__text" name="text" id="text" spellcheck="false" cols="20" rows="3">nmnmnmnmnmnmnmnmnmnmmn</textarea>
+
+                <div class="container__volume">
+                    <label class="tooltip" for="volume">Głośność: (volume)</label>
+                    <input class="volume__range" type="range" id="volume" name="volume" value= 1 min="0.1" max="2" step="0.1">
+                </div>
+
+                <div class="container__speed">
+                    <label class="tooltip" for="speed">Szybkość czytania: (rate)</label>
+                    <input class="speed__range" type="range" id="speed" name="speed" value= 1 min="0.1" max="2" step="0.1">
+                </div>
+
+                <div class="container__pitch">
+                    <label class="tooltip" for="pitch">Wysokość tonu: (pitch)</label>
+                    <input class="pitch__range" type="range" id="pitch" name="pitch" value= 1 min="0.1" max="2" step="0.1">
+                </div>
+
+                <div class="container__btns">
+                    <input class="btn__pause" type="button" value="pause" id="pause">
+                    <input class="btn__play" type="button" value="play" id="play">
+                </div>
+
             </form>
+
         </div>
     </main>
 </body>
