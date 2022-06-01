@@ -18,15 +18,15 @@
 <body>
     <main class="vocalizer">
 
-        <!-- <div class="logo">
+        <div class="logo">
             <i class="fa-solid fa-microphone-lines"></i>
-        </div> -->
+        </div>
 
         <div class="container">
             <form class="vocalizer__form">
 
 
-                <textarea class="form__text" name="text" id="text" spellcheck="false" cols="20" rows="3">nmnmnmnmnmnmnmnmnmnmmn</textarea>
+                <textarea class="form__text" name="text" id="text" spellcheck="false" cols="20" rows="3">text to read</textarea>
 
                 <div class="container__volume">
                     <label class="tooltip" for="volume">Głośność: (volume)</label>
@@ -41,6 +41,16 @@
                 <div class="container__pitch">
                     <label class="tooltip" for="pitch">Wysokość tonu: (pitch)</label>
                     <input class="pitch__range" type="range" id="pitch" name="pitch" value= 1 min="0.1" max="2" step="0.1">
+                </div>
+
+                <div class="container__voice">
+                    <label for="voice">Choose a speaker:</label>
+                    <select name="voice" id="voice" class="voice__select">
+                        <!-- here will go downloaded voices
+                        example: -->
+                        <option value="firstspeaker">firstspeaker</option>
+                        <option value="secondspeaker">secondspeaker</option>
+                    </select>
                 </div>
 
                 <div class="container__btns">
