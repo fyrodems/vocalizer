@@ -6,16 +6,28 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
-
+.logo {
+  font-size: 150px;
+  color: red;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  margin: 20px 0 40px 0;
+}
 .vocalizer {
     display: grid;
     place-items: center;
     height: 100vh;
+    
 
 }
 
 .container {
     width: 400px;
+    background: rgba(220, 220, 220, .3);
+    border-radius: 7px;
+    box-shadow: 0 0 20px -5px rgba(66, 68, 90, 1);
+    padding: 40px;
 
 }
 
