@@ -1,7 +1,14 @@
 const spk = window.speechSynthesis;
 console.log(spk)
+console.dir(spk)
 
-console.log(spk.getVoices())
+const voices = spk.getVoices()
+
+
+
+//define core txtToRead object
+//use this obj to paly, pause etc
+
 
 
 $('#play').on('click', () => {
@@ -12,7 +19,7 @@ $('#play').on('click', () => {
     txtToRead.pitch = $('#pitch').val();
     txtToRead.rate = Number($('#speed').val());
 
-    txtToRead.onend = event => {
+    txtToRead.onend = () => {
         $('.logo').css('color', 'red')
      }
 
@@ -24,18 +31,25 @@ $('#play').on('click', () => {
     if (spk.speaking) {
         $('.logo').css('color', 'green')
     }
+
+
+
+      const voices = window.speechSynthesis.getVoices()
+
+      console.log(voices)
+
+      for(let i = 0; i < voices.length ; i++) {
+        //   if(voices[i].name === selectedOption) {
+        //     txtToRead.voice = voices[i];
+        //   }
+        }
+
 })
-
-
 
 $('#pause').on('click', () => {
+    const txt = $('textarea').val();
+    const txtToRead = new SpeechSynthesisUtterance(txt);
 
+    spk.pause(txtToRead)
 })
-
-
-
-// if (spk.speaking) {
-//     document.querySelector('.logo').style.color = 'green'
-// }
-
 
