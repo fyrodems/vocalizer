@@ -1,15 +1,7 @@
-const spk = window.speechSynthesis;
-console.log(spk)
-console.dir(spk)
+const speech = window.speechSynthesis;
 
-const voices = spk.getVoices()
-
-
-
-//define core txtToRead object
-//use this obj to paly, pause etc
-
-
+        //define core txtToRead object
+        //use this obj to paly, pause etc
 
 $('#play').on('click', () => {
     const txt = $('textarea').val();
@@ -21,35 +13,29 @@ $('#play').on('click', () => {
 
     txtToRead.onend = () => {
         $('.logo').css('color', 'red')
-     }
+    }
 
-    console.log(txt)
-    console.log(txtToRead)
-
-    spk.speak(txtToRead)
-    console.log(spk)
-    if (spk.speaking) {
+    txtToRead.onstart = () => {
         $('.logo').css('color', 'green')
     }
 
+    const voices = window.speechSynthesis.getVoices()
 
+    for(let i = 0; i < voices.length ; i++) {
+      console.log(voices[i].name, `lang:`, voices[i].lang)
+    }
 
-      const voices = window.speechSynthesis.getVoices()
-
-      console.log(voices)
-
-      for(let i = 0; i < voices.length ; i++) {
-        //   if(voices[i].name === selectedOption) {
-        //     txtToRead.voice = voices[i];
-        //   }
-        }
-
+    speech.speak(txtToRead)
+    console.log(txtToRead)
 })
 
-$('#pause').on('click', () => {
-    const txt = $('textarea').val();
-    const txtToRead = new SpeechSynthesisUtterance(txt);
 
-    spk.pause(txtToRead)
-})
+//not working:
+
+// $('#pause').on('click', () => {
+//     const txt = $('textarea').val();
+//     const txtToRead = new SpeechSynthesisUtterance(txt);
+
+//     speech.pause(txtToRead)
+// })
 
