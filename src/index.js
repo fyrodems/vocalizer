@@ -1,4 +1,8 @@
+import '../../vocalizer/style.scss';
+import { usersText } from './constants'
+
 const speech = window.speechSynthesis;
+console.log(usersText)
 
         //define core txtToRead object
         //use this obj to paly, pause etc
