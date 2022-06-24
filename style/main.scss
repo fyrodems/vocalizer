@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import 'input';
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    .logo {
+      font-size: 150px;
+      color: blueviolet;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      margin: 20px 0 40px 0;
+    }
+}
+
+.vocalizer {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    
+
+}
+
+.container {
+    width: 400px;
+    background: rgba(220, 220, 220, .3);
+    border-radius: 30px;
+    box-shadow: 0 0 20px -5px rgba(66, 68, 90, 1);
+    padding: 40px;
+
+}
+
+.vocalizer__form {
+    display: flex;
+    flex-direction: column;
+}
+
+
