@@ -1,44 +1,23 @@
-import '../../vocalizer/style.scss';
-import { usersText } from './constants'
+import '../style/main.scss';
+import { startHandler, endHandler } from './eventHandlers';
+
 
 const speech = window.speechSynthesis;
 
-        //define core txtToRead object
-        //use this obj to paly, pause etc
-
 $('#play').on('click', () => {
-    const txt = $('textarea').val();
-    const txtToRead = new SpeechSynthesisUtterance(txt);
 
-    txtToRead.volume = $('#volume').val();
-    txtToRead.pitch = $('#pitch').val();
-    txtToRead.rate = Number($('#speed').val());
+    const text = $('textarea').val();
+    const textToRead = new SpeechSynthesisUtterance(text);
 
-    txtToRead.onend = () => {
-        $('.logo').css('color', 'red')
-    }
+    textToRead.volume = $('#volume').val();
+    textToRead.pitch = $('#pitch').val();
+    textToRead.rate = Number($('#rate').val());
+    textToRead.lang = $('#voice').find(":selected").val();
 
-    txtToRead.onstart = () => {
-        $('.logo').css('color', 'green')
-    }
+    startHandler(textToRead);
+    endHandler(textToRead);
 
-    const voices = window.speechSynthesis.getVoices()
-
-    for(let i = 0; i < voices.length ; i++) {
-      console.log(voices[i].name, `lang:`, voices[i].lang)
-    }
-
-    speech.speak(txtToRead)
-    console.log(txtToRead)
+    speech.speak(textToRead);
 })
 
-
-//not working:
-
-// $('#pause').on('click', () => {
-//     const txt = $('textarea').val();
-//     const txtToRead = new SpeechSynthesisUtterance(txt);
-
-//     speech.pause(txtToRead)
-// })
 
