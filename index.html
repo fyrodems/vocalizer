@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,61 +7,50 @@
     
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="./dist/mian.css">
+    <link rel="stylesheet" href="./dist/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>vocalizer</title>
 </head>
-
 <body>
     <main class="vocalizer">
-
-        
-
         <div class="container">
-
             <div class="logo">
                 <i class="fa-solid fa-microphone-lines"></i>
             </div> 
-
             <form class="vocalizer__form">
-
-
-                <textarea class="form__text" name="text" id="text" spellcheck="false" cols="20" rows="3">text to read</textarea>
-
+                <textarea placeholder='Enter your text' class="form__text" name="text" id="text" spellcheck="false" cols="20" rows="3"></textarea>
                 <div class="container__volume">
-                    <label class="tooltip" for="volume">Głośność: (volume)</label>
-                    <input class="volume__range" type="range" id="volume" name="volume" value= 1 min="0.1" max="2" step="0.1">
+                    <label class="tooltip" for="volume">Volume</label>
+                    <input class="volume__range" type="range" id="volume" name="volume" value="0.5" min="0" max="1" step="0.00001">
                 </div>
-
-                <div class="container__speed">
-                    <label class="tooltip" for="speed">Szybkość czytania: (rate)</label>
-                    <input class="speed__range" type="range" id="speed" name="speed" value= 1 min="0.1" max="2" step="0.1">
+                <div class="container__rate">
+                    <label class="tooltip" for="rate">Speed</label>
+                    <input class="rate__range" type="range" id="rate" name="rate" value="1" min="0" max="2" step="0.00001">
                 </div>
-
                 <div class="container__pitch">
-                    <label class="tooltip" for="pitch">Wysokość tonu: (pitch)</label>
-                    <input class="pitch__range" type="range" id="pitch" name="pitch" value= 1 min="0.1" max="2" step="0.1">
+                    <label class="tooltip" for="pitch">Pitch</label>
+                    <input class="pitch__range" type="range" id="pitch" name="pitch" value="1" min="0" max="2" step="0.00001">
                 </div>
-
                 <div class="container__voice">
                     <label for="voice">Choose a speaker:</label>
-                    <select name="voice" id="voice" class="voice__select">
-                        <!-- here will go downloaded voices
-                        example: -->
-                        <option value="firstspeaker">firstspeaker</option>
-                        <option value="secondspeaker">secondspeaker</option>
-                    </select>
+                    <div class="select">
+                        <select name="voice" id="voice" class="voice__select">
+                            <option value="pl-PL">Zosia (polski)</option>
+                            <option value="en-US">Alex (English)</option>
+                            <option value="fr-CA">Amelie (français)</option>
+                            <option value="de-DE">Frieda (Deutsch)</option>
+                            <option value="ja-JP">Kyoko (日本語)</option>
+                        </select>
+                        <div class="select_arrow"></div>
+                    </div>
                 </div>
-
                 <div class="container__btns">
-                    <input class="btn__pause" type="button" value="pause" id="pause">
-                    <input class="btn__play" type="button" value="play" id="play">
+                    <input style='display: none;' class="btn__pause" type="button" value="Pause" id="pause">
+                    <input class="btn__play" type="button" value="Play" id="play">
                 </div>
-
             </form>
-
         </div>
     </main>
     <script type="module" src="./dist/main.js" defer></script>
