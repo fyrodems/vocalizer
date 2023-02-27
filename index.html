@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="./dist/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>vocalizer</title>
 </head>
+
 <body>
     <main class="vocalizer">
         <div class="container">
             <div class="logo">
                 <i class="fa-solid fa-microphone-lines"></i>
-            </div> 
+            </div>
             <form class="vocalizer__form">
-                <textarea placeholder='Enter your text' class="form__text" name="text" id="text" spellcheck="false" cols="20" rows="3"></textarea>
+                <textarea placeholder='Enter your text' class="form__text" name="text" id="text" spellcheck="false"
+                    cols="20" rows="3"></textarea>
                 <div class="container__volume">
                     <label class="tooltip" for="volume">Volume</label>
-                    <input class="volume__range" type="range" id="volume" name="volume" value="0.5" min="0" max="1" step="0.00001">
+                    <input class="volume__range" type="range" id="volume" name="volume" value="0.5" min="0" max="1"
+                        step="0.00001">
                 </div>
                 <div class="container__rate">
                     <label class="tooltip" for="rate">Speed</label>
-                    <input class="rate__range" type="range" id="rate" name="rate" value="1" min="0" max="2" step="0.00001">
+                    <input class="rate__range" type="range" id="rate" name="rate" value="1" min="0" max="2"
+                        step="0.00001">
                 </div>
                 <div class="container__pitch">
                     <label class="tooltip" for="pitch">Pitch</label>
-                    <input class="pitch__range" type="range" id="pitch" name="pitch" value="1" min="0" max="2" step="0.00001">
+                    <input class="pitch__range" type="range" id="pitch" name="pitch" value="1" min="0" max="2"
+                        step="0.00001">
                 </div>
                 <div class="container__voice">
                     <label for="voice">Choose a speaker:</label>
                     <div class="select">
                         <select name="voice" id="voice" class="voice__select">
-                            <option value="pl-PL">Zosia (polski)</option>
-                            <option value="en-US">Alex (English)</option>
-                            <option value="fr-CA">Amelie (français)</option>
-                            <option value="de-DE">Frieda (Deutsch)</option>
-                            <option value="ja-JP">Kyoko (日本語)</option>
+                            <option value="pl-PL">polski</option>
+                            <option value="en-US">English</option>
+                            <option value="fr-CA">français</option>
+                            <option value="de-DE">Deutsch</option>
+                            <option value="ja-JP">日本語</option>
                         </select>
                         <div class="select_arrow"></div>
                     </div>
@@ -55,4 +61,5 @@
     </main>
     <script type="module" src="./dist/main.js" defer></script>
 </body>
+
 </html>
