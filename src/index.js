@@ -1,23 +1,23 @@
-import '../style/main.scss';
-import { startHandler, endHandler } from './eventHandlers';
-
+import "../style/main.scss";
+import { startHandler, endHandler } from "./eventHandlers";
 
 const speech = window.speechSynthesis;
 
-$('#play').on('click', () => {
+$("#play").on("click", () => {
+  const text = $("textarea").val();
+  const textToRead = new SpeechSynthesisUtterance(text);
 
-    const text = $('textarea').val();
-    const textToRead = new SpeechSynthesisUtterance(text);
+  textToRead.volume = $("#volume").val();
+  textToRead.pitch = $("#pitch").val();
+  textToRead.rate = Number($("#rate").val());
+  textToRead.lang = $("#voice").find(":selected").val();
 
-    textToRead.volume = $('#volume').val();
-    textToRead.pitch = $('#pitch').val();
-    textToRead.rate = Number($('#rate').val());
-    textToRead.lang = $('#voice').find(":selected").val();
+  startHandler(textToRead);
+  endHandler(textToRead);
 
-    startHandler(textToRead);
-    endHandler(textToRead);
+  speech.speak(textToRead);
+});
 
-    speech.speak(textToRead);
-})
-
-
+$("#pause").on("click", () => {
+  console.log("click");
+});
